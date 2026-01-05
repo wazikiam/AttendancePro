@@ -1,0 +1,49 @@
+{
+  "app": {
+    "name": "برنامج الحضور",
+    "description": "نظام إدارة الحضور المحترف",
+    "version": "الإصدار {{version}}"
+  },
+  "common": {
+    "save": "حفظ",
+    "cancel": "إلغاء",
+    "delete": "حذف",
+    "edit": "تعديل",
+    "view": "عرض",
+    "search": "بحث...",
+    "loading": "جاري التحميل...",
+    "error": "خطأ",
+    "success": "نجاح",
+    "warning": "تحذير",
+    "confirm": "تأكيد",
+    "close": "إغلاق",
+    "back": "رجوع",
+    "next": "التالي",
+    "previous": "السابق",
+    "submit": "إرسال",
+    "reset": "إعادة تعيين",
+    "download": "تحميل",
+    "upload": "رفع",
+    "print": "طباعة",
+    "export": "تصدير",
+    "import": "استيراد",
+    "filter": "تصفية",
+    "sort": "ترتيب",
+    "refresh": "تحديث",
+    "settings": "الإعدادات",
+    "help": "مساعدة",
+    "logout": "تسجيل الخروج"
+  },
+  "navigation": {
+    "dashboard": "لوحة التحكم",
+    "subscribers": "المشتركين",
+    "attendance": "الحضور",
+    "reports": "التقارير",
+    "settings": "الإعدادات"
+  },
+  "languages": {
+    "en": "الإنجليزية",
+    "ar": "العربية",
+    "fr": "الفرنسية"
+  }
+}

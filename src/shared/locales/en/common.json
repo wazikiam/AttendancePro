@@ -1,0 +1,49 @@
+{
+  "app": {
+    "name": "Attendance Pro",
+    "description": "Professional Attendance Management System",
+    "version": "Version {{version}}"
+  },
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "view": "View",
+    "search": "Search...",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "warning": "Warning",
+    "confirm": "Confirm",
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "submit": "Submit",
+    "reset": "Reset",
+    "download": "Download",
+    "upload": "Upload",
+    "print": "Print",
+    "export": "Export",
+    "import": "Import",
+    "filter": "Filter",
+    "sort": "Sort",
+    "refresh": "Refresh",
+    "settings": "Settings",
+    "help": "Help",
+    "logout": "Logout"
+  },
+  "navigation": {
+    "dashboard": "Dashboard",
+    "subscribers": "Subscribers",
+    "attendance": "Attendance",
+    "reports": "Reports",
+    "settings": "Settings"
+  },
+  "languages": {
+    "en": "English",
+    "ar": "Arabic",
+    "fr": "French"
+  }
+}
