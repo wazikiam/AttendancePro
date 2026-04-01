@@ -1,7 +1,7 @@
 {
   "name": "attendancepro",
   "productName": "Attendance Pro",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Professional Attendance Management System",
   "main": "dist/main/main.js",
   "scripts": {
@@ -58,7 +58,7 @@
   "build": {
     "appId": "com.attendancepro.enterprise",
     "productName": "Attendance Pro",
-    "copyright": "Copyright © 2024 Attendance Solutions Inc.",
+    "copyright": "Copyright (c) 2024 Attendance Solutions Inc.",
     "directories": {
       "output": "dist",
       "buildResources": "build"
@@ -87,3 +87,4 @@
     "publish": null
   }
 }
+
