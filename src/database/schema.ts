@@ -1,8 +1,7 @@
 // Attendance Pro Database Schema
 // SQL.js (pure JavaScript SQLite) implementation
-// ✅ Enterprise-safe: database stored outside Windows user profile
-// ✅ Survives OS restore / user reset
-// ✅ Deterministic path (D:\AttendancePro\data)
+// ✅ Uses app-specific OS data directory by default (portable across PCs)
+// ✅ Migrates legacy database from D:\AttendancePro\data when found
 
 import initSqlJs from 'sql.js';
 import * as path from 'path';
@@ -37,19 +36,28 @@ export class DatabaseManager {
   private config: DatabaseConfig;
 
   constructor(config?: Partial<DatabaseConfig>) {
-    /* ========================================================
-       ✅ CRITICAL FIX
-       Store DB on D:\AttendancePro\data
-       ======================================================== */
+    const legacyDataRoot = path.join('D:', 'AttendancePro', 'data');
+    const defaultDataRoot = path.join(app.getPath('userData'), 'data');
+    const defaultDbPath = path.join(defaultDataRoot, 'attendance-pro.db');
+    const legacyDbPath = path.join(legacyDataRoot, 'attendance-pro.db');
 
-    const dataRoot = path.join('D:', 'AttendancePro', 'data');
+    if (!fs.existsSync(defaultDataRoot)) {
+      fs.mkdirSync(defaultDataRoot, { recursive: true });
+    }
 
-    if (!fs.existsSync(dataRoot)) {
-      fs.mkdirSync(dataRoot, { recursive: true });
+    // Preserve existing installs that used the old D: database location.
+    // If the new location is empty and legacy DB exists, copy it once.
+    if (!fs.existsSync(defaultDbPath) && fs.existsSync(legacyDbPath)) {
+      try {
+        fs.copyFileSync(legacyDbPath, defaultDbPath);
+        console.log('[Database] Migrated legacy DB to userData path:', defaultDbPath);
+      } catch (error) {
+        console.warn('[Database] Legacy DB migration skipped:', error);
+      }
     }
 
     this.config = {
-      databasePath: path.join(dataRoot, 'attendance-pro.db'),
+      databasePath: defaultDbPath,
       wasmPath: path.join(
         app.getAppPath(),
         'node_modules',
